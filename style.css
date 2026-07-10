@@ -1,7 +1,7 @@
-/* ==========================
+/* ===========================
    AADIYOGI TRAVELS
    PREMIUM STYLE.CSS
-========================== */
+=========================== */
 
 *{
 margin:0;
@@ -12,10 +12,23 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#0b0b0b;
+background:#070707;
 color:#fff;
-line-height:1.6;
+line-height:1.7;
 overflow-x:hidden;
+}
+
+img{
+max-width:100%;
+display:block;
+}
+
+a{
+text-decoration:none;
+}
+
+ul{
+list-style:none;
 }
 
 /* Scrollbar */
@@ -25,17 +38,18 @@ width:8px;
 }
 
 ::-webkit-scrollbar-thumb{
-background:#ff7a00;
-border-radius:20px;
+background:#f7a600;
+border-radius:30px;
 }
 
-/* Navbar */
+/* ================= NAVBAR ================= */
 
 header{
 position:fixed;
 top:0;
+left:0;
 width:100%;
-z-index:1000;
+z-index:999;
 }
 
 .navbar{
@@ -43,61 +57,272 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:18px 8%;
-background:rgba(0,0,0,.55);
-backdrop-filter:blur(14px);
+background:rgba(0,0,0,.65);
+backdrop-filter:blur(18px);
 }
 
 .logo img{
 height:65px;
 }
 
-.nav-links{
+.navbar ul{
 display:flex;
-list-style:none;
 gap:35px;
 }
 
-.nav-links a{
+.navbar ul li a{
 color:#fff;
-text-decoration:none;
 font-weight:500;
-transition:.3s;
+transition:.35s;
 }
 
-.nav-links a:hover{
-color:#ff7a00;
+.navbar ul li a:hover{
+color:#f7a600;
 }
 
-.btn{
-background:#ff7a00;
+.book-btn{
+background:#f7a600;
 color:#fff;
-padding:13px 28px;
+padding:14px 28px;
 border-radius:50px;
-text-decoration:none;
-font-weight:600;
-transition:.4s;
-box-shadow:0 10px 30px rgba(255,122,0,.35);
+font-weight:700;
+transition:.35s;
+box-shadow:0 0 25px rgba(247,166,0,.35);
 }
 
-.btn:hover{
-background:#ff9500;
+.book-btn:hover{
+background:#ffbf00;
 transform:translateY(-4px);
 }
 
-/* Hero */
+/* ================= HERO ================= */
+
 .hero{
-    position:relative;
-    min-height:100vh;
-    background:url("hero.png") center center/cover no-repeat;
-    display:flex;
-    align-items:center;
+position:relative;
+min-height:100vh;
+
+background:
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.65)),
+url("hero.png");
+
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+
+display:flex;
+align-items:center;
+
+padding:0 9%;
 }
 
 .overlay{
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.45);
+display:none;
 }
+
+.hero-content{
+max-width:650px;
+z-index:5;
+animation:fadeUp 1.2s;
+}
+
+.hero h1{
+font-size:65px;
+line-height:1.15;
+font-weight:800;
+margin-bottom:20px;
+}
+
+.hero h1 span{
+display:block;
+color:#f7a600;
+}
+
+.hero p{
+font-size:20px;
+color:#ddd;
+margin-bottom:40px;
+}
+
+.hero-buttons{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.call,
+.whatsapp{
+
+padding:15px 35px;
+
+border-radius:50px;
+
+font-weight:700;
+
+transition:.35s;
+
+display:inline-flex;
+
+align-items:center;
+
+gap:10px;
+}
+
+.call{
+background:#f7a600;
+color:#fff;
+}
+
+.call:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 35px rgba(247,166,0,.4);
+}
+
+.whatsapp{
+background:#25D366;
+color:#fff;
+}
+
+.whatsapp:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 35px rgba(37,211,102,.4);
+}
+
+/* ================= SECTION ================= */
+
+section{
+padding:90px 8%;
+}
+
+section h2{
+font-size:40px;
+margin-bottom:45px;
+text-align:center;
+color:#f7a600;
+font-weight:800;
+}
+
+@keyframes fadeUp{
+
+0%{
+opacity:0;
+transform:translateY(40px);
+}
+
+100%{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/*==============================
+ SERVICES
+==============================*/
+
+.service-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.card{
+background:#111;
+padding:35px;
+border-radius:18px;
+text-align:center;
+transition:.4s;
+border:1px solid rgba(255,255,255,.08);
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 20px 40px rgba(247,166,0,.25);
+border-color:#f7a600;
+}
+
+.card i{
+font-size:48px;
+color:#f7a600;
+margin-bottom:20px;
+}
+
+.card h3{
+margin-bottom:12px;
+font-size:24px;
+}
+
+.card p{
+color:#bbb;
+}
+
+/*==============================
+ ROUTES
+==============================*/
+
+.routes{
+background:#0d0d0d;
+}
+
+.routes ul{
+max-width:700px;
+margin:auto;
+}
+
+.routes li{
+background:#151515;
+padding:18px 25px;
+margin:15px 0;
+border-left:5px solid #f7a600;
+border-radius:12px;
+transition:.3s;
+}
+
+.routes li:hover{
+transform:translateX(10px);
+}
+
+/*==============================
+ ABOUT
+==============================*/
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+text-align:center;
+}
+
+.features div{
+background:#111;
+padding:35px;
+border-radius:18px;
+transition:.4s;
+}
+
+.features div:hover{
+background:#171717;
+transform:translateY(-8px);
+}
+
+.features i{
+font-size:45px;
+color:#f7a600;
+margin-bottom:18px;
+}
+
+.features h3{
+font-size:22px;
+}
+
+/*==============================
+ CONTACT
+==============================*/
+
+.contact{
+text-align:center;
+background:#0b0b0b;
+}
+
+.contact p{
+margin:15px 0;
+font-size:18px;
