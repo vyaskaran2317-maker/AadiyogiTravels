@@ -1,34 +1,40 @@
-// ===============================
-// Aadiyogi Travels - Premium JS
-// ===============================
+// ==========================
+// AADIYOGI TRAVELS
+// PREMIUM SCRIPT.JS
+// ==========================
 
-// Smooth scrolling for menu links
-document.querySelectorAll('nav a').forEach(link => {
-    link.addEventListener('click', function(e) {
+// Smooth scrolling
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener("click", function (e) {
         e.preventDefault();
 
-        const target = document.querySelector(this.getAttribute('href'));
+        const target = document.querySelector(this.getAttribute("href"));
 
         if (target) {
             target.scrollIntoView({
-                behavior: 'smooth'
+                behavior: "smooth",
+                block: "start"
             });
         }
     });
 });
 
-// Header background on scroll
-const header = document.querySelector("header");
+// Navbar background on scroll
+const navbar = document.querySelector(".navbar");
 
 window.addEventListener("scroll", () => {
+
     if (window.scrollY > 80) {
-        header.style.background = "rgba(0,0,0,0.92)";
+        navbar.style.background = "rgba(0,0,0,0.95)";
+        navbar.style.boxShadow = "0 8px 25px rgba(0,0,0,.4)";
     } else {
-        header.style.background = "rgba(0,0,0,0.55)";
+        navbar.style.background = "rgba(0,0,0,.55)";
+        navbar.style.boxShadow = "none";
     }
+
 });
 
-// Fade animation on scroll
+// Fade-in animation
 const observer = new IntersectionObserver((entries) => {
 
     entries.forEach(entry => {
@@ -37,16 +43,15 @@ const observer = new IntersectionObserver((entries) => {
 
             entry.target.style.opacity = "1";
             entry.target.style.transform = "translateY(0)";
-
         }
 
     });
 
 }, {
-    threshold: 0.2
+    threshold: 0.15
 });
 
-document.querySelectorAll(".card, .about, .why, .gallery, .contact, .counter").forEach(el => {
+document.querySelectorAll("section, .card, .route-grid div").forEach(el => {
 
     el.style.opacity = "0";
     el.style.transform = "translateY(40px)";
@@ -56,72 +61,41 @@ document.querySelectorAll(".card, .about, .why, .gallery, .contact, .counter").f
 
 });
 
-// Animated Counter
-const counters = document.querySelectorAll(".counter h2");
+// Hero text animation
+window.addEventListener("load", () => {
 
-let started = false;
+    const hero = document.querySelector(".hero-content");
 
-window.addEventListener("scroll", () => {
+    if (hero) {
+        hero.style.opacity = "0";
+        hero.style.transform = "translateY(30px)";
 
-    const counterSection = document.querySelector(".counter");
-
-    if (!counterSection || started) return;
-
-    const position = counterSection.getBoundingClientRect().top;
-
-    if (position < window.innerHeight - 100) {
-
-        started = true;
-
-        counters.forEach(counter => {
-
-            const text = counter.innerText;
-
-            const target = parseInt(text);
-
-            if (isNaN(target)) return;
-
-            let count = 0;
-
-            const speed = target / 80;
-
-            const update = () => {
-
-                count += speed;
-
-                if (count < target) {
-
-                    counter.innerText = Math.floor(count) + "+";
-
-                    requestAnimationFrame(update);
-
-                } else {
-
-                    if (text.includes("%")) {
-                        counter.innerText = target + "%";
-                    } else if (text.includes("/")) {
-                        counter.innerText = "24/7";
-                    } else {
-                        counter.innerText = target + "+";
-                    }
-
-                }
-
-            };
-
-            update();
-
-        });
-
+        setTimeout(() => {
+            hero.style.transition = "all 1s ease";
+            hero.style.opacity = "1";
+            hero.style.transform = "translateY(0)";
+        }, 300);
     }
 
 });
 
-// Gallery Click Zoom
-document.querySelectorAll(".gallery-grid img").forEach(img => {
+// Button hover effect
+document.querySelectorAll(".btn, .call, .whatsapp").forEach(button => {
 
-    img.addEventListener("click", () => {
+    button.addEventListener("mouseenter", () => {
+        button.style.transform = "translateY(-4px) scale(1.03)";
+    });
 
-        const overlay = document.createElement("div");
+    button.addEventListener("mouseleave", () => {
+        button.style.transform = "translateY(0) scale(1)";
+    });
 
-        overlay.style.position = "fixed
+});
+
+// Current year in footer (optional)
+const year = document.getElementById("year");
+if (year) {
+    year.textContent = new Date().getFullYear();
+}
+
+console.log("Aadiyogi Travels website loaded successfully.");
