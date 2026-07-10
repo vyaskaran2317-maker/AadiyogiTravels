@@ -1,376 +1,101 @@
-/* =========================
+/* ==========================
    AADIYOGI TRAVELS
-   Premium Dark Theme
-========================= */
+   PREMIUM STYLE.CSS
+========================== */
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 scroll-behavior:smooth;
 }
 
 body{
-font-family:'Poppins',sans-serif;
-background:#070b16;
+background:#0b0b0b;
 color:#fff;
 line-height:1.6;
 overflow-x:hidden;
 }
 
-/* Scroll Bar */
+/* Scrollbar */
 
 ::-webkit-scrollbar{
 width:8px;
 }
 
 ::-webkit-scrollbar-thumb{
-background:#d4af37;
-border-radius:10px;
+background:#ff7a00;
+border-radius:20px;
 }
 
-/* Header */
+/* Navbar */
 
 header{
 position:fixed;
 top:0;
-left:0;
 width:100%;
+z-index:1000;
+}
+
+.navbar{
 display:flex;
 justify-content:space-between;
 align-items:center;
 padding:18px 8%;
 background:rgba(0,0,0,.55);
-backdrop-filter:blur(12px);
-z-index:999;
+backdrop-filter:blur(14px);
 }
 
-.logo h2{
-font-family:'Playfair Display',serif;
-color:#fff;
+.logo img{
+height:65px;
 }
 
-.logo span{
-font-size:12px;
-color:#d4af37;
+.nav-links{
+display:flex;
+list-style:none;
+gap:35px;
 }
 
-nav a{
+.nav-links a{
 color:#fff;
 text-decoration:none;
-margin-left:25px;
+font-weight:500;
 transition:.3s;
-font-size:15px;
 }
 
-nav a:hover{
-color:#d4af37;
+.nav-links a:hover{
+color:#ff7a00;
+}
+
+.btn{
+background:#ff7a00;
+color:#fff;
+padding:13px 28px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+transition:.4s;
+box-shadow:0 10px 30px rgba(255,122,0,.35);
+}
+
+.btn:hover{
+background:#ff9500;
+transform:translateY(-4px);
 }
 
 /* Hero */
 
 .hero{
 height:100vh;
-background:
-linear-gradient(rgba(5,10,20,.75),
-rgba(5,10,20,.85)),
-url("images/hero.jpg") center/cover;
+background:url("hero.jpg") center center/cover no-repeat;
+position:relative;
 display:flex;
 align-items:center;
-justify-content:center;
-text-align:center;
-padding:20px;
+padding:0 8%;
 }
 
-.hero-content{
-max-width:700px;
-animation:fadeUp 1.5s;
-}
-
-.hero h1{
-font-size:55px;
-font-family:'Playfair Display',serif;
-margin-bottom:20px;
-}
-
-.hero p{
-font-size:20px;
-color:#ddd;
-margin-bottom:35px;
-}
-
-.hero-buttons{
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
-}
-
-.btn,
-.btn2{
-padding:14px 35px;
-border-radius:50px;
-text-decoration:none;
-font-weight:600;
-transition:.3s;
-}
-
-.btn{
-background:#d4af37;
-color:#111;
-}
-
-.btn:hover{
-transform:translateY(-5px);
-}
-
-.btn2{
-border:2px solid #d4af37;
-color:#fff;
-}
-
-.btn2:hover{
-background:#d4af37;
-color:#111;
-}
-
-/* Sections */
-
-section{
-padding:90px 8%;
-}
-
-.section-title{
-text-align:center;
-margin-bottom:45px;
-}
-
-.section-title h2{
-font-size:38px;
-font-family:'Playfair Display',serif;
-color:#d4af37;
-}
-
-/* About */
-
-.about p{
-max-width:900px;
-margin:auto;
-font-size:18px;
-text-align:center;
-color:#ddd;
-}
-
-/* Cards */
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:25px;
-}
-
-.card{
-background:rgba(255,255,255,.05);
-border:1px solid rgba(255,255,255,.08);
-backdrop-filter:blur(12px);
-padding:35px;
-border-radius:18px;
-text-align:center;
-transition:.4s;
-}
-
-.card:hover{
-transform:translateY(-12px);
-border-color:#d4af37;
-}
-
-.card i{
-font-size:42px;
-margin-bottom:18px;
-color:#d4af37;
-}
-
-.card h3{
-margin-bottom:12px;
-}
-
-/* Why */
-
-.why ul{
-max-width:700px;
-margin:auto;
-list-style:none;
-}
-
-.why li{
-padding:14px;
-margin:12px 0;
-background:#101827;
-border-left:4px solid #d4af37;
-border-radius:8px;
-}
-
-/* Counter */
-
-.counter{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-gap:20px;
-text-align:center;
-}
-
-.counter div{
-background:#101827;
-padding:35px;
-border-radius:18px;
-}
-
-.counter h2{
-font-size:42px;
-color:#d4af37;
-}
-
-/* Gallery */
-
-.gallery-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:18px;
-}
-
-.gallery-grid img{
-width:100%;
-height:220px;
-object-fit:cover;
-border-radius:15px;
-transition:.4s;
-cursor:pointer;
-}
-
-.gallery-grid img:hover{
-transform:scale(1.06);
-}
-
-/* Contact */
-
-.contact{
-text-align:center;
-}
-
-.contact p{
-margin:16px 0;
-font-size:18px;
-}
-
-.book-btn{
-display:inline-block;
-margin-top:25px;
-padding:15px 40px;
-background:#d4af37;
-color:#111;
-text-decoration:none;
-font-weight:600;
-border-radius:40px;
-transition:.3s;
-}
-
-.book-btn:hover{
-transform:scale(1.05);
-}
-
-/* Footer */
-
-footer{
-background:#04070d;
-padding:25px;
-text-align:center;
-color:#aaa;
-}
-
-/* Floating Buttons */
-
-.call,
-.whatsapp{
-position:fixed;
-right:20px;
-width:58px;
-height:58px;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:50%;
-color:#fff;
-font-size:22px;
-text-decoration:none;
-z-index:999;
-box-shadow:0 10px 25px rgba(0,0,0,.35);
-}
-
-.call{
-bottom:95px;
-background:#007bff;
-}
-
-.whatsapp{
-bottom:25px;
-background:#25D366;
-}
-
-/* Animation */
-
-@keyframes fadeUp{
-
-0%{
-opacity:0;
-transform:translateY(40px);
-}
-
-100%{
-opacity:1;
-transform:translateY(0);
-}
-
-}
-
-/* Mobile */
-
-@media(max-width:768px){
-
-header{
-padding:15px 5%;
-flex-direction:column;
-}
-
-nav{
-margin-top:12px;
-}
-
-nav a{
-margin:0 10px;
-font-size:14px;
-}
-
-.hero h1{
-font-size:36px;
-}
-
-.hero p{
-font-size:16px;
-}
-
-.section-title h2{
-font-size:30px;
-}
-
-section{
-padding:70px 5%;
-}
-
-.call,
-.whatsapp{
-width:52px;
-height:52px;
-font-size:20px;
-}
-
-}
+.overlay{
+position:absolute;
+inset:0;
+background:linear-gradient(to right,rgba(0,0,0,.82
