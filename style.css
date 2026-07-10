@@ -98,9 +98,18 @@ transform:translateY(-4px);
 /* ================= HERO ================= */
 
 .hero{
-    min-height:100vh;
-    background:url("hero.png") center center / cover no-repeat;
-    background-position:center center;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 120px 8% 80px;
+    background: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
+                url("hero.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-color: #111;
 }
 
 background:
@@ -122,9 +131,9 @@ display:none;
 }
 
 .hero-content{
-max-width:650px;
-z-index:5;
-animation:fadeUp 1.2s;
+    max-width: 500px;
+    z-index: 2;
+    margin-top: 180px;
 }
 
 .hero h1{
