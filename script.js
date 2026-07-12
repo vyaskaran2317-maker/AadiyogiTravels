@@ -228,6 +228,7 @@ console.log(
     "Developed with ❤️ for Aadiyogi Travels"
 );
 
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(-10px);}
+const data = {
+    name: "Aadiyogi",
+    phone: "8460631306"
 }
