@@ -228,8 +228,6 @@ console.log(
     "Developed with ❤️ for Aadiyogi Travels"
 );
 
-/* JavaScript Animation Classes */
-
     display:flex;
     flex-direction:column;
     position:absolute;
