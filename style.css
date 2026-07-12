@@ -689,3 +689,35 @@ footer{
 .map iframe{
     height:300px;
 }
+.nav-links.show{
+    display:flex;
+}
+
+.nav-links a.active{
+    color:#ff7a00;
+}
+
+.service-card,
+.why-card,
+.route-card,
+.review-card,
+.about-image,
+.about-content{
+    opacity:0;
+    transform:translateY(30px);
+    transition:.6s;
+}
+
+.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.bounce{
+    animation:bounce .6s;
+}
+
+@keyframes bounce{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-10px);}
+}
