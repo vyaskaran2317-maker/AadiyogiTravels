@@ -230,7 +230,6 @@ console.log(
 
 /* JavaScript Animation Classes */
 
-.nav-links.show{
     display:flex;
     flex-direction:column;
     position:absolute;
@@ -243,31 +242,14 @@ console.log(
     z-index:999;
 }
 
-.nav-links a.active{
     color:#ff7a00;
 }
 
-.service-card,
-.why-card,
-.route-card,
-.review-card,
-.about-image,
-.about-content{
     opacity:0;
     transform:translateY(40px);
     transition:all .8s ease;
 }
 
-.visible{
-    opacity:1;
-    transform:translateY(0);
-}
-
-.bounce{
-    animation:bounce .8s;
-}
-
-@keyframes bounce{
     0%,100%{transform:translateY(0);}
     50%{transform:translateY(-10px);}
 }
