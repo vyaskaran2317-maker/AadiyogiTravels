@@ -680,3 +680,31 @@ footer{
 }
 
 }
+.nav-links.show{
+...
+}
+
+.nav-links a.active{
+...
+}
+
+.service-card,
+.why-card,
+.route-card,
+.review-card,
+.about-image,
+.about-content{
+...
+}
+
+.visible{
+...
+}
+
+.bounce{
+...
+}
+
+@keyframes bounce{
+...
+}
