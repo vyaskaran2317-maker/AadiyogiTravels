@@ -132,7 +132,7 @@ nav{
 .hero{
     margin-top:80px;
     min-height:90vh;
-    background:url("images/hero.png") center center/cover no-repeat;
+    background:#222;
     position:relative;
     display:flex;
     align-items:center;
@@ -229,6 +229,7 @@ nav{
 
 .hero-image img{
     width:100%;
+    max-width:600px;
     animation:carFloat 4s ease-in-out infinite;
 }
 
