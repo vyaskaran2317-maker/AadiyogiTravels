@@ -228,26 +228,6 @@ console.log(
     "Developed with ❤️ for Aadiyogi Travels"
 );
 
-    display:flex;
-    flex-direction:column;
-    position:absolute;
-    top:80px;
-    left:0;
-    width:100%;
-    background:#fff;
-    padding:20px;
-    box-shadow:0 10px 25px rgba(0,0,0,.1);
-    z-index:999;
-}
-
-    color:#ff7a00;
-}
-
-    opacity:0;
-    transform:translateY(40px);
-    transition:all .8s ease;
-}
-
     0%,100%{transform:translateY(0);}
     50%{transform:translateY(-10px);}
 }
